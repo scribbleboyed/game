@@ -1,13 +1,13 @@
 body {
   margin: 0px;
   padding: 0px;
-  text-align: center;
-  background: #ccc; }
+  background: #444;
+  text-align: center; }
 
 #canvas {
   margin-top: 100px;
-  border: 1px solid #ccc;
   background: #fff;
-  box-shadow: 1px 1px 10px #aaa; }
+  border: 20px solid #555;
+  border-radius: 20px; }
 
 /*# sourceMappingURL=style.css.map */
