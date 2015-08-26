@@ -46,16 +46,17 @@ body {
   width: 100%; }
 
 #gameOver {
-  font-size: 150px;
+  font-size: 10px;
   text-align: center;
   font-weight: bolder;
-  margin-top: 200px;
+  width: 100px;
+  margin-top: 50px;
   padding: 10px;
-  color: #999;
-  text-shadow: 1px 5px 20px #333;
+  color: #000;
   opacity: 0;
   z-index: 7;
-  width: 100%;
-  position: absolute; }
+  position: absolute;
+  background: #fff;
+  border: 1px solid #000; }
 
 /*# sourceMappingURL=style.css.map */
