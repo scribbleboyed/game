@@ -1,7 +1,7 @@
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 
-var spriteCanvas = document.getElementById('sprites');
+var spriteCanvas = document.getElementById('sprite');
 var spriteContext = spriteCanvas.getContext('2d');
 
 var overlayCanvas = document.getElementById('overlay');
@@ -146,11 +146,8 @@ function Sprite(name, image, x, y, width, height, numOfFrames) {
 		}
 	};
 
-	this.clear = function(xPos, yPos) {
-		spriteContext.clearRect(xPos, yPos, this.width, this.height);
-	};
-
 	this.render = function() {
+
 		spriteContext.drawImage(
 			this.image,
 			this.width * this.frameIndex,
@@ -337,7 +334,7 @@ t42 = 'tree42';
 t43 = 'tree43';
 
 
-var map =  [[ftl ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ftr   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ],
+var mapL1 =  [[ftl ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ftr   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ],
 			[fl  ,b   ,b   ,tt  ,tt  ,tt  ,tt  ,tt  ,tt  ,tt  ,tt  ,tt  ,tt  ,tt  ,tt  ,fr  ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ],
 			[t13 ,b   ,tl  ,t   ,t   ,t   ,t   ,t   ,t   ,t   ,t   ,t   ,t   ,t   ,tr   ,fr  ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ],
 			[t23 ,g   ,tl  ,t   ,t   ,tb  ,tb  ,tb  ,tb   ,tb   ,tb   ,tb   ,t   ,t  ,tr  ,lrt  ,g ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ,g   ],
@@ -355,72 +352,72 @@ var map =  [[ftl ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft   ,ft
 		];
 
 function loadMap() {
-	for (var x=0; x<map.length; x++) {
-		for (var y=0; y<map[x].length; y++) {
-			switch (map[x][y]) {
+	for (var x=0; x<mapL1.length; x++) {
+		for (var y=0; y<mapL1[x].length; y++) {
+			switch (mapL1[x][y]) {
 				case 'grass': 
 					var randomNum = Math.random();
 					if (randomNum < 0.33) {
-						map[x][y] = new mapObject("grass", bgtile, context, 6, 0, 35*y, 35*x, false); 
+						mapL1[x][y] = new mapObject("grass", bgtile, context, 6, 0, 35*y, 35*x, false); 
 					} else if (randomNum >= 0.33 && randomNum < 0.66) {
-						map[x][y] = new mapObject("grass", bgtile, context, 6, 1, 35*y, 35*x, false);
+						mapL1[x][y] = new mapObject("grass", bgtile, context, 6, 1, 35*y, 35*x, false);
 					} else {
-						map[x][y] = new mapObject("grass", bgtile, context, 7, 1, 35*y, 35*x, false);
+						mapL1[x][y] = new mapObject("grass", bgtile, context, 7, 1, 35*y, 35*x, false);
 					}
 					break;
-				case 'bush': map[x][y] = new mapObject("bush", bgtile, context, 7, 0, 35*y, 35*x, true); break;
-				case 'bush-top-left': map[x][y] = new mapObject("bush", bgtile, context, 6, 22, 35*y, 35*x, true); break;
-				case 'bush-top': map[x][y] = new mapObject("bush", bgtile, context, 7, 22, 35*y, 35*x, true); break;
-				case 'bush-top-right': map[x][y] = new mapObject("bush", bgtile, context, 8, 22, 35*y, 35*x, true); break;
-				case 'tile': map[x][y] = new mapObject("bush", bgtile, context, 0, 15, 35*y, 35*x, false); break;
-				case 'tile-top': map[x][y] = new mapObject("bush", bgtile, context, 3, 15, 35*y, 35*x, false); break;
-				case 'tile-bottom': map[x][y] = new mapObject("bush", bgtile, context, 4, 15, 35*y, 35*x, false); break;
-				case 'tile-left': map[x][y] = new mapObject("bush", bgtile, context, 1, 15, 35*y, 35*x, false); break;
-				case 'tile-right': map[x][y] = new mapObject("bush", bgtile, context, 2, 15, 35*y, 35*x, false); break;
-				case 'tile-turn-right-top': map[x][y] = new mapObject("bush", bgtile, context, 4, 16, 35*y, 35*x, false); break;
-				case 'tile-turn-right-bottom': map[x][y] = new mapObject("bush", bgtile, context, 2, 17, 35*y, 35*x, false); break;
+				case 'bush': mapL1[x][y] = new mapObject("bush", bgtile, context, 7, 0, 35*y, 35*x, true); break;
+				case 'bush-top-left': mapL1[x][y] = new mapObject("bush", bgtile, context, 6, 22, 35*y, 35*x, true); break;
+				case 'bush-top': mapL1[x][y] = new mapObject("bush", bgtile, context, 7, 22, 35*y, 35*x, true); break;
+				case 'bush-top-right': mapL1[x][y] = new mapObject("bush", bgtile, context, 8, 22, 35*y, 35*x, true); break;
+				case 'tile': mapL1[x][y] = new mapObject("bush", bgtile, context, 0, 15, 35*y, 35*x, false); break;
+				case 'tile-top': mapL1[x][y] = new mapObject("bush", bgtile, context, 3, 15, 35*y, 35*x, false); break;
+				case 'tile-bottom': mapL1[x][y] = new mapObject("bush", bgtile, context, 4, 15, 35*y, 35*x, false); break;
+				case 'tile-left': mapL1[x][y] = new mapObject("bush", bgtile, context, 1, 15, 35*y, 35*x, false); break;
+				case 'tile-right': mapL1[x][y] = new mapObject("bush", bgtile, context, 2, 15, 35*y, 35*x, false); break;
+				case 'tile-turn-right-top': mapL1[x][y] = new mapObject("bush", bgtile, context, 4, 16, 35*y, 35*x, false); break;
+				case 'tile-turn-right-bottom': mapL1[x][y] = new mapObject("bush", bgtile, context, 2, 17, 35*y, 35*x, false); break;
 
-				case 'fence-top': map[x][y] = new mapObject("grass", bgtile, context, 7, 11, 35*y, 35*x, true); break;
-				case 'fence-top-left': map[x][y] = new mapObject("grass", bgtile, context, 6, 11, 35*y, 35*x, true); break;
-				case 'fence-top-right': map[x][y] = new mapObject("grass", bgtile, context, 8, 11, 35*y, 35*x, true); break;
-				case 'fence-left': map[x][y] = new mapObject("grass", bgtile, context, 6, 12, 35*y, 35*x, true); break;
-				case 'fence-right': map[x][y] = new mapObject("grass", bgtile, context, 8, 12, 35*y, 35*x, true); break;
-				case 'fence-bottom-left': map[x][y] = new mapObject("grass", bgtile, context, 6, 13, 35*y, 35*x, true); break;
-				case 'fence-bottom-right': map[x][y] = new mapObject("grass", bgtile, context, 8, 13, 35*y, 35*x, true); break;
-				case 'fence-bottom': map[x][y] = new mapObject("grass", bgtile, context, 7, 13, 35*y, 35*x, true); break;
+				case 'fence-top': mapL1[x][y] = new mapObject("grass", bgtile, context, 7, 11, 35*y, 35*x, true); break;
+				case 'fence-top-left': mapL1[x][y] = new mapObject("grass", bgtile, context, 6, 11, 35*y, 35*x, true); break;
+				case 'fence-top-right': mapL1[x][y] = new mapObject("grass", bgtile, context, 8, 11, 35*y, 35*x, true); break;
+				case 'fence-left': mapL1[x][y] = new mapObject("grass", bgtile, context, 6, 12, 35*y, 35*x, true); break;
+				case 'fence-right': mapL1[x][y] = new mapObject("grass", bgtile, context, 8, 12, 35*y, 35*x, true); break;
+				case 'fence-bottom-left': mapL1[x][y] = new mapObject("grass", bgtile, context, 6, 13, 35*y, 35*x, true); break;
+				case 'fence-bottom-right': mapL1[x][y] = new mapObject("grass", bgtile, context, 8, 13, 35*y, 35*x, true); break;
+				case 'fence-bottom': mapL1[x][y] = new mapObject("grass", bgtile, context, 7, 13, 35*y, 35*x, true); break;
 				
-				case 'lamp-right-top': map[x][y] = new mapObject("grass", bgtile, context, 7, 18, 35*y, 35*x, true); break;
-				case 'lamp-right-middle': map[x][y] = new mapObject("grass", bgtile, context, 7, 19, 35*y, 35*x, true); break;
-				case 'lamp-right-bottom': map[x][y] = new mapObject("grass", bgtile, context, 7, 20, 35*y, 35*x, true); break;
-				case 'lamp-left-top': map[x][y] = new mapObject("grass", bgtile, context, 6, 18, 35*y, 35*x, true); break;
-				case 'lamp-left-middle': map[x][y] = new mapObject("grass", bgtile, context, 6, 19, 35*y, 35*x, true); break;
-				case 'lamp-left-bottom': map[x][y] = new mapObject("grass", bgtile, context, 6, 20, 35*y, 35*x, true); break;
+				case 'lamp-right-top': mapL1[x][y] = new mapObject("grass", bgtile, context, 7, 18, 35*y, 35*x, true); break;
+				case 'lamp-right-middle': mapL1[x][y] = new mapObject("grass", bgtile, context, 7, 19, 35*y, 35*x, true); break;
+				case 'lamp-right-bottom': mapL1[x][y] = new mapObject("grass", bgtile, context, 7, 20, 35*y, 35*x, true); break;
+				case 'lamp-left-top': mapL1[x][y] = new mapObject("grass", bgtile, context, 6, 18, 35*y, 35*x, true); break;
+				case 'lamp-left-middle': mapL1[x][y] = new mapObject("grass", bgtile, context, 6, 19, 35*y, 35*x, true); break;
+				case 'lamp-left-bottom': mapL1[x][y] = new mapObject("grass", bgtile, context, 6, 20, 35*y, 35*x, true); break;
 
-				case 'tree11': map[x][y] = new mapObject("grass", bgtile, overlayContext, 14, 0, 35*y, 35*x, false); break;
-				case 'tree12': map[x][y] = new mapObject("grass", bgtile, overlayContext, 15, 0, 35*y, 35*x, false); break;
-				case 'tree13': map[x][y] = new mapObject("grass", bgtile, overlayContext, 16, 0, 35*y, 35*x, false); break;
-				case 'tree21': map[x][y] = new mapObject("grass", bgtile, overlayContext, 14, 1, 35*y, 35*x, false); break;
-				case 'tree22': map[x][y] = new mapObject("grass", bgtile, overlayContext, 15, 1, 35*y, 35*x, false); break;
-				case 'tree23': map[x][y] = new mapObject("grass", bgtile, overlayContext, 16, 1, 35*y, 35*x, false); break;
-				case 'tree31': map[x][y] = new mapObject("grass", bgtile, overlayContext, 14, 2, 35*y, 35*x, true); break;
-				case 'tree32': map[x][y] = new mapObject("grass", bgtile, overlayContext, 15, 2, 35*y, 35*x, true); break;
-				case 'tree33': map[x][y] = new mapObject("grass", bgtile, overlayContext, 16, 2, 35*y, 35*x, true); break;
-				case 'tree41': map[x][y] = new mapObject("grass", bgtile, context, 14, 3, 35*y, 35*x, true); break;
-				case 'tree42': map[x][y] = new mapObject("grass", bgtile, context, 15, 3, 35*y, 35*x, true); break;
-				case 'tree43': map[x][y] = new mapObject("grass", bgtile, context, 16, 3, 35*y, 35*x, true); break;
+				case 'tree11': mapL1[x][y] = new mapObject("grass", bgtile, overlayContext, 14, 0, 35*y, 35*x, false); break;
+				case 'tree12': mapL1[x][y] = new mapObject("grass", bgtile, overlayContext, 15, 0, 35*y, 35*x, false); break;
+				case 'tree13': mapL1[x][y] = new mapObject("grass", bgtile, overlayContext, 16, 0, 35*y, 35*x, false); break;
+				case 'tree21': mapL1[x][y] = new mapObject("grass", bgtile, overlayContext, 14, 1, 35*y, 35*x, false); break;
+				case 'tree22': mapL1[x][y] = new mapObject("grass", bgtile, overlayContext, 15, 1, 35*y, 35*x, false); break;
+				case 'tree23': mapL1[x][y] = new mapObject("grass", bgtile, overlayContext, 16, 1, 35*y, 35*x, false); break;
+				case 'tree31': mapL1[x][y] = new mapObject("grass", bgtile, overlayContext, 14, 2, 35*y, 35*x, true); break;
+				case 'tree32': mapL1[x][y] = new mapObject("grass", bgtile, overlayContext, 15, 2, 35*y, 35*x, true); break;
+				case 'tree33': mapL1[x][y] = new mapObject("grass", bgtile, overlayContext, 16, 2, 35*y, 35*x, true); break;
+				case 'tree41': mapL1[x][y] = new mapObject("grass", bgtile, context, 14, 3, 35*y, 35*x, true); break;
+				case 'tree42': mapL1[x][y] = new mapObject("grass", bgtile, context, 15, 3, 35*y, 35*x, true); break;
+				case 'tree43': mapL1[x][y] = new mapObject("grass", bgtile, context, 16, 3, 35*y, 35*x, true); break;
 
 
 			}
-			sprites.push(map[x][y]);
+			sprites.push(mapL1[x][y]);
 		}
 	}
 }
 
 function renderMap() {
-	for (var x=0; x<map.length; x++) {
-		for (var y=0; y<map[x].length; y++) {
-			if (map[x][y] != null) {
-				map[x][y].render();
+	for (var x=0; x<mapL1.length; x++) {
+		for (var y=0; y<mapL1[x].length; y++) {
+			if (mapL1[x][y] != null) {
+				mapL1[x][y].render();
 			}
 		}
 	}
@@ -481,12 +478,6 @@ function draw() {
 	setTimeout(function() {
 		requestAnimationFrame(draw);
 
-		renderMap();
-
-		for (var x=0; x < building.length; x++) {
-			building[x].render();
-		}
-
 		if (!bootsUsed) {
 			context.drawImage(bootImage,0,0, 39, 45, 325, 400, 20, 25)
 		};
@@ -501,7 +492,11 @@ function draw() {
 			bootsUsed = true;
 		}
 
-		// AI LOGIC
+		// CLEAR SPRITE CANVAS
+
+		spriteContext.clearRect(0, 0, spriteCanvas.width, spriteCanvas.height);
+
+		// ADD SPRITES
 
 		police1.walk();
 		police1.update();
@@ -602,6 +597,13 @@ building[7] = new mapObject("grass", bgtile, overlayContext, 21, 2, x+35*2, y+35
 
 $(document).ready(function() {
 
+	bgtile.onload = function() {
+		renderMap();
+		for (var x=0; x < building.length; x++) {
+			building[x].render();
+		}
+	}
+
 lightingContext.fillStyle= '#000';
 lightingContext.fillRect(0,0,canvas.width,canvas.height);
 
@@ -657,7 +659,6 @@ gradient.addColorStop(0, "rgba(255, 255, 255, 0.4)");
 gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
 lightingContext.fillStyle = gradient;
 lightingContext.fillRect(0, 0, canvas.width, canvas.height);
-
 
 })
 
