@@ -31,13 +31,6 @@ body {
   position: absolute;
   width: 100%; }
 
-#spotlight {
-  margin-top: 50px;
-  opacity: 1;
-  z-index: 5;
-  position: absolute;
-  width: 100%; }
-
 #debug {
   margin-top: 50px;
   opacity: 0;
