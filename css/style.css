@@ -15,26 +15,26 @@ body {
   width: 100%; }
 
 #sprite {
-  margin-top: 10px;
+  margin-top: 30px;
   z-index: 2;
   position: absolute;
   width: 100%; }
 
 #overlay {
-  margin-top: 10px;
+  margin-top: 30px;
   z-index: 3;
   position: absolute;
   width: 100%; }
 
 #lighting {
-  margin-top: 10px;
+  margin-top: 30px;
   z-index: 4;
   opacity: 0.75;
   position: absolute;
   width: 100%; }
 
 #debug {
-  margin-top: 10px;
+  margin-top: 30px;
   opacity: 0;
   z-index: 6;
   position: absolute;
