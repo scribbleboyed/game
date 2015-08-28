@@ -9,39 +9,39 @@ body {
   font-family: bit; }
 
 #game {
-  margin-top: 10px;
+  margin-top: 30px;
   z-index: 1;
   position: absolute;
   width: 100%; }
 
 #sprite {
-  margin-top: 10px;
+  margin-top: 30px;
   z-index: 2;
   position: absolute;
   width: 100%; }
 
 #overlay {
-  margin-top: 10px;
+  margin-top: 30px;
   z-index: 3;
   position: absolute;
   width: 100%; }
 
 #lighting {
-  margin-top: 10px;
+  margin-top: 30px;
   z-index: 4;
   opacity: 0.75;
   position: absolute;
   width: 100%; }
 
 #debug {
-  margin-top: 10px;
+  margin-top: 30px;
   opacity: 0;
   z-index: 6;
   position: absolute;
   width: 100%; }
 
 #timer {
-  margin-top: 15px;
+  margin-top: 40px;
   opacity: 1;
   z-index: 7;
   position: absolute;
@@ -82,7 +82,7 @@ body {
   z-index: 11;
   position: absolute;
   width: 100%;
-  height: 250px;
+  height: 525px;
   text-align: center;
   font-size: 20px;
   display: none; }
@@ -103,7 +103,7 @@ body {
   z-index: 11;
   position: absolute;
   width: 100%;
-  height: 250px;
+  height: 525px;
   text-align: center;
   font-size: 20px;
   display: none; }
@@ -125,7 +125,7 @@ body {
   z-index: 12;
   position: absolute;
   width: 100%;
-  height: 200px;
+  height: 525px;
   text-align: center;
   font-size: 20px; }
   #timeout p {
