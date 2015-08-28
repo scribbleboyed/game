@@ -1,6 +1,8 @@
 @font-face {
   font-family: bit;
-  src: url("../fonts/8-bit.ttf"); }
+  src: url("../fonts/8-bit.ttf");
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -41,7 +43,7 @@ body {
   width: 100%; }
 
 #timer {
-  margin-top: 15px;
+  margin-top: 45px;
   opacity: 1;
   z-index: 7;
   position: absolute;
