@@ -871,6 +871,20 @@ function addLights() {
 
 $(document).ready(function() {
 
+	canvas.setAttribute('width', '1130');
+	canvas.setAttribute('height', '525');
+	spriteCanvas.setAttribute('width', '1130');
+	spriteCanvas.setAttribute('height', '525');
+	overlayCanvas.setAttribute('width', '1130');
+	overlayCanvas.setAttribute('height', '525');
+	lightingCanvas.setAttribute('width', '1130');
+	lightingCanvas.setAttribute('height', '525');
+	textCanvas.setAttribute('width', '1130');
+	textCanvas.setAttribute('height', '525');
+	debugCanvas.setAttribute('width', '1130');
+	debugCanvas.setAttribute('height', '525');
+
+
 	loadMap();
 	draw();
 	addLights();
@@ -936,5 +950,4 @@ function reset() {
 function p1win() {
 	textCanvas.style.background('red');
 }
-
 

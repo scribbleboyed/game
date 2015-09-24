@@ -1,51 +1,48 @@
 @font-face {
   font-family: bit;
   src: url("../fonts/8-bit.ttf"); }
+
 body {
-  margin: 0px;
-  padding: 0px;
-  background: #000;
-  width: 800px;
-  font-family: bit; }
+  padding: 30px;
+  background: #335A48;
+  font-family: bit;
+}
+
+canvas {
+  position: absolute;
+  border-radius: 20px;
+}
+
+.overlayText {
+  position: absolute;
+  width: 1130px;
+  height: 525px;
+  border-radius: 20px;
+}
 
 #game {
-  margin-top: 30px;
-  z-index: 1;
-  position: absolute;
-  width: 100%; }
+  z-index: 1; 
+  box-shadow: 1px 3px 10px #192D24;
+}
 
-#sprite {
-  margin-top: 30px;
-  z-index: 2;
-  position: absolute;
-  width: 100%; }
+#sprite { z-index: 2; }
 
-#overlay {
-  margin-top: 30px;
-  z-index: 3;
-  position: absolute;
-  width: 100%; }
+#overlay { z-index: 3; }
 
 #lighting {
-  margin-top: 30px;
   z-index: 4;
   opacity: 0.75;
-  position: absolute;
-  width: 100%; }
+  }
 
 #debug {
-  margin-top: 30px;
   opacity: 0;
   z-index: 6;
-  position: absolute;
-  width: 100%; }
+  }
 
 #timer {
   margin-top: 40px;
   opacity: 1;
   z-index: 7;
-  position: absolute;
-  width: 100%;
   text-align: center;
   font-size: 30px;
   color: #fff;
@@ -67,43 +64,39 @@ body {
   color: blue; }
 
 #text {
-  margin-top: 10px;
   opacity: 1;
   z-index: 8;
-  position: absolute;
-  width: 100%; }
+}
 
 #p1win {
   color: #fff;
   background: red;
-  margin-top: 30px;
   padding-top: 150px;
   text-align: center;
   z-index: 11;
   position: absolute;
-  width: 100%;
-  height: 525px;
+  height: 375px;
   text-align: center;
   font-size: 30px;
-  display: none; }
-  #p1win #image {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    position: relative;
-    width: 32px;
-    height: 40px;
-    background-image: url("../images/player1.png"); }
+  display: none;
+}
+
+#p1win #image {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  position: relative;
+  width: 32px;
+  height: 40px;
+  background-image: url("../images/player1.png"); }
 
 #p2win {
   color: #fff;
   background: blue;
-  margin-top: 30px;
   padding-top: 150px;
+  height: 375px;
   text-align: center;
   z-index: 11;
   position: absolute;
-  width: 100%;
-  height: 525px;
   text-align: center;
   font-size: 30px;
   display: none; }
@@ -118,14 +111,12 @@ body {
 #timeout {
   color: #fff;
   background: #000;
-  margin-top: 30px;
   padding-top: 150px;
+  height: 375px;
   text-align: center;
   display: none;
   z-index: 12;
   position: absolute;
-  width: 100%;
-  height: 525px;
   text-align: center;
   font-size: 30px; }
   #timeout p {
@@ -147,27 +138,29 @@ body {
     background-position: 0px 0px; }
   to {
     background-position: 128px 0px; } }
+
 #controls {
-  position: fixed;
-  left: 10px;
-  bottom: 10px;
-  opacity: 0.7;
-  color: #fff; }
+  position: absolute;
+  width: 1130px;
+  top: 570px;
+  font-size: 12px;
+  color: #192D24; 
+}
 
-.player {
-  font-size: 20px;
-  color: #fff;
-  opacity: 0.9;
-  text-align: center;
-  font-weight: bolder;
-  background: #222;
+table td{
   padding: 5px;
-  margin-right: 5px;
-  display: inline-block;
-  border-radius: 5px; }
+}
 
-.controls {
-  display: inline-block;
-  color: #fff; }
+.moveTitle {
+  background: #fff;
+}
 
+.moveName {
+  text-align: right;
+}
+
+.moveButton {
+  background: #192D24;
+  color: #fff;
+}
 /*# sourceMappingURL=style.css.map */

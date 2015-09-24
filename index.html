@@ -12,53 +12,76 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
-	<canvas id="game" width="1130px" height="525px"></canvas>
-	<canvas id="sprite" width="1130px" height="525px"></canvas>
-	<canvas id="overlay" width="1130px" height="525px"></canvas>
-	<canvas id="debug" width="1130px" height="525px"></canvas>
-	<canvas id="lighting" width="1130px" height="525px"></canvas>
-	<canvas id="text" width="1130px" height="525px"></canvas>
-	<div id="p1win" width="1130px" height="525px">
-		<div id="image" class="player1"></div> PLAYER ONE WINS
+
+	<canvas class="gameCanvas" id="game"></canvas>
+	<canvas class="gameCanvas" id="sprite"></canvas>
+	<canvas class="gameCanvas" id="overlay"></canvas>
+	<canvas class="gameCanvas" id="debug"></canvas>
+	<canvas class="gameCanvas" id="lighting"></canvas>
+	<canvas class="gameCanvas" id="text"></canvas>
+
+	<div class="overlayText" id="p1win">
+		<div id="image" class="player1"></div>
+		<h1>PLAYER ONE WINS</h1>
 	</div>
 
-	<div id="p2win" width="1130px" height="525px">
-		<div id="image" class="player2"></div> PLAYER TWO WINS
+	<div class="overlayText" id="p2win">
+		<div id="image" class="player2"></div>
+		<h1>PLAYER TWO WINS</h1>
 	</div>
 
-	<div id="timeout" width="1130px" height="525px">
+	<div class="overlayText" id="timeout">
 		<p>TIME'S UP!</p>
 	</div>
-	<div id="timer"><h1>POK<span>ESCAPE</span></h1>
-				<p>RUN!</P>
-					<p>PUSH!</p>
-					<p>GET INSIDE!</p>
+
+	<div class="overlayText" id="timer">
+		<h1>POK<span>ESCAPE</span></h1>
+		<p>RUN!</P>
+		<p>PUSH!</p>
+		<p>GET INSIDE!</p>
 		<p id="instruction">Press Spacebar to Start</p>
 	</div>
 
 	<div id="controls">
-		<div id="player1" class="player">
-				Player One
-			<div class="controls">
-				<span class="move">W</span>
-				<span class="move">A</span>
-				<span class="move">S</span>
-				<span class="move">D</span>
-				<span class="move">Shift (Run)</span>
-				<span class="move">Z (Push)</span>
-			</div>
-		</div>
-		<div id="player2" class="player">
-				Player Two
-			<div class="controls">
-				<span class="move"><i class="fa fa-arrow-up"></i></span>
-				<span class="move"><i class="fa fa-arrow-down"></i></span>
-				<span class="move"><i class="fa fa-arrow-left"></i></span>
-				<span class="move"><i class="fa fa-arrow-right"></i></span>
-				<span class="move">M (Run)</span>
-				<span class="move">Comma (Push)</span>
-			</div>
-		</div>
+		<p>Pokescape is a game created by Edward Yeh using HTML5 Canvas, CSS and Javascript<br/>Visit https://github.com/scribbleboyed/pokescape for more information</p>
+		<br/>
+		<table>
+			<tr>
+				<td></td>
+				<td class="moveTitle">Player One</td>
+				<td class="moveTitle">Player Two</td>
+			</tr>
+			<tr>
+				<td class="moveName">Up</td>
+				<td class="moveButton">W</td>
+				<td class="moveButton">Up Arrow</td>
+			</tr>
+			<tr>
+				<td class="moveName">Down</td>
+				<td class="moveButton">S</td>
+				<td class="moveButton">Down Arrow</td>
+			</tr>
+			<tr>
+				<td class="moveName">Left</td>
+				<td class="moveButton">A</td>
+				<td class="moveButton">Left Arrow</td>
+			</tr>
+			<tr>
+				<td class="moveName">Right</td>
+				<td class="moveButton">D</td>
+				<td class="moveButton">Right Arrow</td>
+			</tr>
+			<tr>
+				<td class="moveName">Run</td>
+				<td class="moveButton">Shift</td>
+				<td class="moveButton">M</td>
+			</tr>
+			<tr>
+				<td class="moveName">Push</td>
+				<td class="moveButton">Z</td>
+				<td class="moveButton"><</td>
+			</tr>
+		</table>
 	</div>
 	<script src="js/script.js"></script>
 </body>
