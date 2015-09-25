@@ -8,4 +8,4 @@ Pokescape was created for the first project at General Assembly WDI.  The projec
 
 ## Game Engine
 
-Pokescapemon was developed using sprite animations on HTML5 Canvas with CSS and Javascript/JQuery.
+Pokescape was developed using sprite animations on HTML5 Canvas with CSS and Javascript/JQuery.  The game engine was created as part of the project.  No third party game engine frameworks were used.
